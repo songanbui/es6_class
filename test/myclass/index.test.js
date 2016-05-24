@@ -33,9 +33,9 @@ describe('MyClass - constructor', () => {
   });
 });
 
-describe('MyClass - myMethodZero', () => {
-  it('should return zero', () => {
-    expect(myClassInstance.myMethodZero(1, 2)).to.equal(0);
+describe('MyClass - myMethodOneOriginal', () => {
+  it('should return sum of two params', () => {
+    expect(myClassInstance.myMethodOneOriginal(1, 2)).to.equal(3);
   });
 });
 
@@ -45,26 +45,14 @@ describe('MyClass - myMethodOne', () => {
   });
 });
 
-describe('MyClass - myMethodOneBis', () => {
-  it('should return myMethodOne method', function() {
-    expect(myClassInstance.myMethodOneBis).to.be.equal(myMethodOne);
-  });
-});
-
-describe('MyClass - getMyString', () => {
+describe('MyClass - myMethodTwoOriginal', () => {
   it('should return myClassInstance.myString', function() {
-    expect(myClassInstance.getMyString(1, 2)).to.be.equal(myClassInstance.myString);
+    expect(myClassInstance.myMethodTwoOriginal(1, 2)).to.be.equal(myClassInstance.myString);
   });
 });
 
 describe('MyClass - myMethodTwo', () => {
   it('should return myMethodTwo method bounded with this', function() {
     expect(myClassInstance.myMethodTwo).to.be.equal(myMethodTwo);
-  });
-});
-
-describe('MyClass - myMethodTwoBis', () => {
-  it('should return myMethodTwo method bounded with this', function() {
-    expect(myClassInstance.myMethodTwoBis).to.be.equal(myMethodTwo);
   });
 });
