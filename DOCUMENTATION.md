@@ -30,10 +30,10 @@ MyClass class
 
 * [MyClass](#MyClass)
     * [new MyClass(one, two)](#new_MyClass_new)
+    * [.myMethodTwo(one, two)](#MyClass+myMethodTwo) ⇒ <code>String</code>
     * [.myMethodOneOriginal(one, two)](#MyClass+myMethodOneOriginal) ⇒ <code>Number</code>
     * [.myMethodOne(one, two)](#MyClass+myMethodOne) ⇒ <code>Number</code>
     * [.myMethodTwoOriginal(one, two)](#MyClass+myMethodTwoOriginal) ⇒ <code>String</code>
-    * [.myMethodTwo(one, two)](#MyClass+myMethodTwo) ⇒ <code>String</code>
 
 <a name="new_MyClass_new"></a>
 
@@ -46,6 +46,22 @@ Create a new MyClass instance
 | one | <code>String</code> | a String |
 | two | <code>String</code> | another String |
 
+<a name="MyClass+myMethodTwo"></a>
+
+### myClass.myMethodTwo(one, two) ⇒ <code>String</code>
+Return class property myString
+
+**Kind**: instance method of <code>[MyClass](#MyClass)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| one | <code>Number</code> | a Number |
+| two | <code>Number</code> | another Number |
+
+**Example**  
+```js
+// return 'foo'const myClass = new MyClass('foo', 'bar');return myClass.myMethodTwo(1, 2);
+```
 <a name="MyClass+myMethodOneOriginal"></a>
 
 ### myClass.myMethodOneOriginal(one, two) ⇒ <code>Number</code>
@@ -93,22 +109,6 @@ Return class property myString (standard)
 **Example**  
 ```js
 // return 'foo'const myClass = new MyClass('foo', 'bar');return myClass.myMethodTwoOriginal(1, 2);
-```
-<a name="MyClass+myMethodTwo"></a>
-
-### myClass.myMethodTwo(one, two) ⇒ <code>String</code>
-Return class property myString
-
-**Kind**: instance method of <code>[MyClass](#MyClass)</code>  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| one | <code>Number</code> | a Number |
-| two | <code>Number</code> | another Number |
-
-**Example**  
-```js
-// return 'foo'const myClass = new MyClass('foo', 'bar');return myClass.myMethodTwo(1, 2);
 ```
 <a name="Foobar"></a>
 

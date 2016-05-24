@@ -54,15 +54,19 @@ describe('MyClass - myMethodTwoOriginal', () => {
 });
 
 describe('MyClass - myMethodTwo', () => {
-  const bound = myMethodTwo.bind(myClassInstance);
+  let myclass;
+  const bound = function mockBoundMyMethodTwo() {
+    return 'mock';
+  };
   before(() => {
     sinon.stub(myMethodTwo, 'bind', () => {
       return bound;
     });
+    myclass = new MyClass(argOne, argTwo);
   });
 
   it('should return myMethodTwo method bounded with this', function() {
-    expect(myClassInstance.myMethodTwo).to.be.equal(bound);
+    expect(myclass.myMethodTwo).to.be.equal(bound);
   });
 
   after(() => {
