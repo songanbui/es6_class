@@ -3,6 +3,8 @@ const chai = require('chai');
 const chaiAsPromised = require('chai-as-promised');
 chai.use(chaiAsPromised);
 const expect = chai.expect;
+const sinon = require('sinon');
+require('sinon-as-promised');
 
 const MyClass = require('../../lib/myClass/index');
 const myMethodOne = require('../../lib/myClass/mymethodone');
@@ -52,7 +54,18 @@ describe('MyClass - myMethodTwoOriginal', () => {
 });
 
 describe('MyClass - myMethodTwo', () => {
+  const bound = myMethodTwo.bind(myClassInstance);
+  before(() => {
+    sinon.stub(myMethodTwo, 'bind', () => {
+      return bound;
+    });
+  });
+
   it('should return myMethodTwo method bounded with this', function() {
-    expect(myClassInstance.myMethodTwo).to.be.equal(myMethodTwo);
+    expect(myClassInstance.myMethodTwo).to.be.equal(bound);
+  });
+
+  after(() => {
+    myMethodTwo.bind.restore();
   });
 });
