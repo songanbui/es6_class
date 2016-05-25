@@ -4,6 +4,14 @@
 <dt><a href="#MyClass">MyClass</a></dt>
 <dd><p>MyClass class</p>
 </dd>
+<dt><a href="#MyClassHelperOne">MyClassHelperOne</a></dt>
+<dd><p>MyClassHelperOne class
+Helper class for MyClass</p>
+</dd>
+<dt><a href="#MyClassHelperTwo">MyClassHelperTwo</a></dt>
+<dd><p>MyClassHelperTwo class
+Helper class for MyClass</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -26,6 +34,8 @@ MyClass class
 | myString | <code>String</code> | a String |
 | myArray | <code>Array.&lt;String&gt;</code> | an Array of String |
 | myFoobar | <code>[Foobar](#Foobar)</code> | a Foobar object |
+| myClassHelperOne | <code>[MyClassHelperOne](#MyClassHelperOne)</code> | an instance of MyClassHelperOne |
+| myClassHelperTwo | <code>[MyClassHelperTwo](#MyClassHelperTwo)</code> | an instance of MyClassHelperTwo |
 
 
 * [MyClass](#MyClass)
@@ -76,7 +86,7 @@ Return sum of two param
 
 **Example**  
 ```js
-// return 3const myClass = new MyClass('foo', 'bar');return myClass.myMethodOne(1, 2);
+// return 3const myClass = new MyClass('foo', 'bar');return myClass.myMethodOneOriginal(1, 2);
 ```
 <a name="MyClass+myMethodTwoOriginal"></a>
 
@@ -100,6 +110,82 @@ Return class property myString (standard)
 Return class property myString
 
 **Kind**: instance method of <code>[MyClass](#MyClass)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| one | <code>Number</code> | a Number |
+| two | <code>Number</code> | another Number |
+
+**Example**  
+```js
+// return 'foo'const myClass = new MyClass('foo', 'bar');return myClass.myMethodTwo(1, 2);
+```
+<a name="MyClassHelperOne"></a>
+
+## MyClassHelperOne
+MyClassHelperOne classHelper class for MyClass
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| myClass | <code>[MyClass](#MyClass)</code> | an instance of MyClass |
+
+
+* [MyClassHelperOne](#MyClassHelperOne)
+    * [new MyClassHelperOne()](#new_MyClassHelperOne_new)
+    * [.myMethod(one, two)](#MyClassHelperOne+myMethod) ⇒ <code>Number</code>
+
+<a name="new_MyClassHelperOne_new"></a>
+
+### new MyClassHelperOne()
+Create a new MyClassHelperOne instance{MyClass} myClass - an instance of MyClass
+
+<a name="MyClassHelperOne+myMethod"></a>
+
+### myClassHelperOne.myMethod(one, two) ⇒ <code>Number</code>
+Return sum of two param
+
+**Kind**: instance method of <code>[MyClassHelperOne](#MyClassHelperOne)</code>  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| one | <code>Number</code> | a Number |
+| two | <code>Number</code> | another Number |
+
+**Example**  
+```js
+// return 3const myClass = new MyClass('foo', 'bar');return myClass.myMethodOneOriginal(1, 2);
+```
+<a name="MyClassHelperTwo"></a>
+
+## MyClassHelperTwo
+MyClassHelperTwo classHelper class for MyClass
+
+**Kind**: global class  
+**Properties**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| myClass | <code>[MyClass](#MyClass)</code> | an instance of MyClass |
+
+
+* [MyClassHelperTwo](#MyClassHelperTwo)
+    * [new MyClassHelperTwo()](#new_MyClassHelperTwo_new)
+    * [.myMethod(one, two)](#MyClassHelperTwo+myMethod) ⇒ <code>String</code>
+
+<a name="new_MyClassHelperTwo_new"></a>
+
+### new MyClassHelperTwo()
+Create a new MyClassHelperTwo instance{MyClass} myClass - an instance of MyClass
+
+<a name="MyClassHelperTwo+myMethod"></a>
+
+### myClassHelperTwo.myMethod(one, two) ⇒ <code>String</code>
+Return class property myString
+
+**Kind**: instance method of <code>[MyClassHelperTwo](#MyClassHelperTwo)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |

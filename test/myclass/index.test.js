@@ -7,8 +7,8 @@ const sinon = require('sinon');
 require('sinon-as-promised');
 
 const MyClass = require('../../lib/myClass/index');
-const myMethodOne = require('../../lib/myClass/mymethodone');
-const myMethodTwo = require('../../lib/myClass/mymethodtwo');
+const MyClassHelperOne = require('../../lib/myClass/myclasshelperone');
+const MyClassHelperTwo = require('../../lib/myClass/myclasshelpertwo');
 const argOne = 'foo';
 const argTwo = 'bar';
 const myClassInstance = new MyClass(argOne, argTwo);
@@ -33,6 +33,16 @@ describe('MyClass - constructor', () => {
     expect(myClassInstance.myFoobar).to.have.property('one', argOne);
     expect(myClassInstance.myFoobar).to.have.property('two', argTwo);
   });
+
+  it('should have property myClassHelperOne', () => {
+    expect(myClassInstance).to.have.property('myClassHelperOne')
+      .and.to.be.an.instanceof(MyClassHelperOne);
+  });
+
+  it('should have property myClassHelperTwo', () => {
+    expect(myClassInstance).to.have.property('myClassHelperTwo')
+      .and.to.be.an.instanceof(MyClassHelperTwo);
+  });
 });
 
 describe('MyClass - myMethodOneOriginal', () => {
@@ -43,7 +53,7 @@ describe('MyClass - myMethodOneOriginal', () => {
 
 describe('MyClass - myMethodOne', () => {
   it('should return myMethodOne method', function() {
-    expect(myClassInstance.myMethodOne).to.be.equal(myMethodOne);
+    expect(myClassInstance.myMethodOne).to.be.equal(myClassInstance.myClassHelperOne.myMethod);
   });
 });
 
@@ -53,19 +63,8 @@ describe('MyClass - myMethodTwoOriginal', () => {
   });
 });
 
-describe('MyClass - myMethodTwo', () => {
-  const bound = myMethodTwo.bind(myClassInstance);
-  before(() => {
-    sinon.stub(myMethodTwo, 'bind', () => {
-      return bound;
-    });
-  });
-
-  it('should return myMethodTwo method bounded with this', function() {
-    expect(myClassInstance.myMethodTwo).to.be.equal(bound);
-  });
-
-  after(() => {
-    myMethodTwo.bind.restore();
+describe('MyClass - myMethodOne', () => {
+  it('should return myMethodOne method', function() {
+    expect(myClassInstance.myMethodOne).to.be.equal(myClassInstance.myClassHelperOne.myMethod);
   });
 });
